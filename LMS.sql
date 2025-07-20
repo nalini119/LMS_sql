@@ -127,6 +127,9 @@ SELECT CONCAT(first_name," ",last_name) AS full_name,role
 FROM user;
 
 #24. Find the Percentage of Passing Submissions for Each Assessment
+SELECT assessment_name, AVG(CASE WHEN score >= 60 THEN 1 ELSE 0 END) * 100 AS passing_percentage
+FROM submissions
+GROUP BY assessment_name;
 
 #25. Find Courses That Do Not Have Any Enrollments
 #Question: List the courses for which there are no enrollment records.
